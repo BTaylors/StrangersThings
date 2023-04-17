@@ -8,9 +8,7 @@ function App() {
 		<div className="App">
 			<h1>Stranger's Things!</h1>
 			<RegisterForm setToken={setToken} />
-			<Routes>
-				<Route path="/" element={<getPosts />} />
-			</Routes>
+			{/* <Routes><Route path="/" element={<getPosts />} /></Routes> */}
 		</div>
 	);
 }
