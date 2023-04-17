@@ -23,23 +23,12 @@ export async function registerUser(username, password) {
 	}
 }
 
-useEffect(() => {
-	const getPosts = async () => {
+export const getPosts = async () => {
+	try {
 		const response = await fetch(`${BASE_URL}/posts`);
-		const data = await response.json();
-		getPosts(data);
-	};
-	getPosts();
-}, []);
-
-return (
-	<>
-		<h1>Posts</h1>
-		{postMessage.map((post) => (
-			<div key={post.id}>
-				<h3>{post.title}</h3>
-				<div>{post.body}</div>
-			</div>
-		))}
-	</>
-);
+		const result = await response.json();
+		return result.data.posts;
+	} catch (error) {
+		console.error("ERROR");
+	}
+};

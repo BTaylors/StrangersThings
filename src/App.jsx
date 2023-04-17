@@ -1,4 +1,4 @@
-import { useState, ReactDOM } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import RegisterForm from "./components/RegisterForm";
 
@@ -8,7 +8,9 @@ function App() {
 		<div className="App">
 			<h1>Stranger's Things!</h1>
 			<RegisterForm setToken={setToken} />
-			<Routes></Routes>
+			<Routes>
+				<Route path="/" element={<getPosts />} />
+			</Routes>
 		</div>
 	);
 }
