@@ -1,7 +1,3 @@
-import React, { useEffect, useState } from "react";
-import { ReactDOM } from "react";
-import "./index.css";
-
 const COHORT_NAME = "2301-FTB-ET-WEB-AM";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
