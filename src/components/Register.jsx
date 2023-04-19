@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { registerUser } from "../api/helpers";
+
 export default function RegisterForm() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
