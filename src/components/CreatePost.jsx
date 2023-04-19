@@ -11,15 +11,15 @@ export default function CreatePost() {
 			<form
 				onSubmit={async (e) => {
 					e.preventDefault();
-					const newItem = await newPost(name, price);
+					const newItem = await newPost(item, price);
 					console.log("New Item: ", newItem);
 				}}
 			>
-				<label htmlFor="name">Item:</label>
-				<input type="text" onChange={(e) => setName(e.target.value)} />
+				<label htmlFor="item">Item:</label>
+				<input type="text" onChange={(e) => setItem(e.target.value)} />
 				<br />
-				<label htmlFor="breed">Price:</label>
-				<input type="text" onChange={(e) => setBreed(e.target.value)} />
+				<label htmlFor="price">Price:</label>
+				<input type="text" onChange={(e) => setPrice(e.target.value)} />
 				<button>Submit</button>
 			</form>
 		</div>
