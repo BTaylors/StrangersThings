@@ -34,7 +34,7 @@ export const getPosts = async () => {
 	}
 };
 
-const makePost = async () => {
+export const makePost = async () => {
 	try {
 		const response = await fetch(`${BASE_URL}/posts`, {
 			method: "POST",
