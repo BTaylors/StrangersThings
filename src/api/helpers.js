@@ -53,3 +53,20 @@ export const newPost = async () => {
 		console.error(err);
 	}
 };
+
+export const deleteItem = async (id) => {
+	try {
+		console.log("delete item", id);
+		const response = await fetch(`${BASE_URL}posts/${id}`, {
+			method: "DELETE",
+			headers: {
+				"Content-type": "application/json",
+			},
+		});
+		const result = await response.json();
+		console.log(result);
+		return result;
+	} catch (error) {
+		console.error("Oops, I couldn't delete that item!");
+	}
+};
