@@ -34,13 +34,13 @@ export const getPosts = async () => {
 	}
 };
 
-export const makePost = async () => {
+export const newPost = async () => {
 	try {
 		const response = await fetch(`${BASE_URL}/posts`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				Authorization: `Bearer ${TOKEN_STRING_HERE}`,
+				Authorization: `Bearer ${"token"}`,
 			},
 			body: JSON.stringify({
 				post: {},
