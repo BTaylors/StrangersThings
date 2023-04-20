@@ -12,18 +12,19 @@ import SinglePost from "./components/SinglePost";
 import Contact from "./components/Contact";
 
 function App() {
+	// const [token, setToken] = useState(localStorage.getItem("token"));
 	return (
 		<div className="App">
 			<Navbar />
 			{/* <Register setToken={setToken} /> */}
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/profile" element={<Profile />} />
-				<Route path="/singlepost" element={<SinglePost />} />
-				<Route path="/login" element={<Login />} />
-				<Route path="/register" element={<Register />} />
-				<Route path="/create" element={<CreatePost />} />
-				<Route path="/contact" element={<Contact />} />
+				<Route path="/Profile" element={<Profile />} />
+				<Route path="/CreatePost" element={<CreatePost />} />
+				<Route path="/Login" element={<Login />} />
+				<Route path="/Register" element={<Register />} />
+				<Route path="/:id" element={<SinglePost />} />
+				<Route path="/Contact" element={<Contact />} />
 			</Routes>
 			<Footer />
 		</div>

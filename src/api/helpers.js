@@ -34,16 +34,16 @@ export const getPosts = async () => {
 	}
 };
 
-export const fetchSinglePost = async (id) => {
-	try {
-		const response = await fetch(`${BASE_URL}/posts/${id}`);
-		const result = await response.json();
-		console.log("result", result);
-		return result.data.post;
-	} catch (error) {
-		console.error("Oops, I couldn't fetch that post!");
-	}
-};
+// export const fetchSinglePost = async (id) => {
+// 	try {
+// 		const response = await fetch(`${BASE_URL}/posts/${id}`);
+// 		const result = await response.json();
+// 		console.log("result", result);
+// 		return result.data.post;
+// 	} catch (error) {
+// 		console.error("Oops, I couldn't fetch that post!");
+// 	}
+// };
 
 export const newPost = async () => {
 	try {
