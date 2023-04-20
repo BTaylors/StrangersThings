@@ -21,7 +21,9 @@ export default function Navbar() {
 					</button>
 				</li>
 				<li>
-					<button className="link">Login/Register</button>
+					<button className="link" onClick={() => nav("/Login")}>
+						Login/Register
+					</button>
 				</li>
 			</ul>
 		</div>
