@@ -1,0 +1,33 @@
+.allposts {
+	display: flex;
+	flex-direction: column;
+}
+.one-post {
+	margin: 10px;
+	padding: 2rem;
+	border: 1px solid;
+	box-shadow: 1px 1px 2px 2px;
+}
+.post-title {
+	margin: 4px;
+}
+.post-body {
+	margin: 4px;
+}
+.author {
+	margin: 4px;
+}
+.delivery {
+	margin: 4px;
+	font-weight: 700;
+}
+.post-info {
+	list-style: none;
+	margin: 4px;
+}
+
+.details-button {
+	margin: 4px;
+	padding: 5px;
+	font-size: medium;
+}

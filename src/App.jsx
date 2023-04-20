@@ -1,9 +1,9 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import RegisterForm from "./components/Register";
-
+import useAuth from "./hooks/useAuth";
 function App() {
-	const [token, setToken] = useState(localStorage.getItem("token"));
+	const { token } = useAuth;
 	return (
 		<div className="App">
 			<h1>Stranger's Things!</h1>
