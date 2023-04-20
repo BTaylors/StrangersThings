@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { registerUser } from "../api/helpers";
-import useAuth from "../hooks/useAuth";
+// import { registerUser } from "../api/helpers";
+// import useAuth from "../hooks/useAuth";
 
-export default function RegisterForm() {
+export default function Register() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 
@@ -11,7 +11,7 @@ export default function RegisterForm() {
 	async function handleSubmit(e) {
 		e.preventDefault();
 		try {
-			const result = await registerUser(username, password);
+			const result = await Register(username, password);
 			console.log("Result in component: ", result);
 			setToken(result.data.token);
 			localStorage.setItem("token", result.data.token);

@@ -1,14 +1,21 @@
-import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import RegisterForm from "./components/Register";
-import useAuth from "./hooks/useAuth";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/NavBar";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import CreatePost from "./components/CreatePost";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import SinglePost from "./components/SinglePost";
+import Contact from "./components/Contact";
 
 function App() {
-	const { token, user } = useAuth();
 	return (
 		<div className="App">
-			<h1>Stranger's Things!</h1>
-			<RegisterForm setToken={setToken} />
+			<Navbar />
+			{/* <Register setToken={setToken} /> */}
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/profile" element={<Profile />} />
@@ -18,6 +25,7 @@ function App() {
 				<Route path="/create" element={<CreatePost />} />
 				<Route path="/contact" element={<Contact />} />
 			</Routes>
+			<Footer />
 		</div>
 	);
 }
