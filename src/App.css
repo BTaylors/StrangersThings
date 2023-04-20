@@ -59,3 +59,16 @@ html {
 	padding: 6px;
 	margin: 2px;
 }
+
+#createH2 {
+	display: flex;
+	margin: 5px;
+	justify-content: center;
+	align-items: center;
+}
+
+#createText {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}

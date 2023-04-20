@@ -34,18 +34,18 @@ export const getPosts = async () => {
 	}
 };
 
-// export const fetchSinglePost = async (id) => {
-// 	try {
-// 		const response = await fetch(`${BASE_URL}/posts/${id}`);
-// 		const result = await response.json();
-// 		console.log("result", result);
-// 		return result.data.post;
-// 	} catch (error) {
-// 		console.error("Oops, I couldn't fetch that post!");
-// 	}
-// };
+export const fetchSinglePost = async (id) => {
+	try {
+		const response = await fetch(`${BASE_URL}/posts/${id}`);
+		const result = await response.json();
+		console.log("result", result);
+		return result.data.post;
+	} catch (error) {
+		console.error("Oops, I couldn't fetch that post!");
+	}
+};
 
-export const newPost = async () => {
+export const createPost = async () => {
 	try {
 		const response = await fetch(`${BASE_URL}/posts`, {
 			method: "POST",
@@ -81,3 +81,19 @@ export const deleteItem = async (id) => {
 		console.error("Oops, I couldn't delete that item!");
 	}
 };
+
+export async function fetchMe(token) {
+	try {
+		const response = await fetch(`${BASE_URL}/users/me`, {
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+		});
+		const result = await response.json();
+		console.log("Result in fetchMe: ", result);
+		return result;
+	} catch (error) {
+		console.error(error);
+	}
+}
