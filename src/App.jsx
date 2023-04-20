@@ -2,10 +2,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import RegisterForm from "./components/Register";
 import useAuth from "./hooks/useAuth";
-import { createContext, useState } from "react";
-import { AuthContext } from "./components/AuthProvider";
+
 function App() {
-	const { token } = useAuth();
+	const { token, user } = useAuth();
 	return (
 		<div className="App">
 			<h1>Stranger's Things!</h1>
