@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+import "../../App.css";
 
 export default function Login() {
 	return (
@@ -14,6 +14,7 @@ export default function Login() {
 				<label password="password">Password:</label>
 				<br></br>
 				<input type="text" placeholder="Password" />
+				<button id="submitLogin">Submit</button>
 			</form>
 		</div>
 	);
