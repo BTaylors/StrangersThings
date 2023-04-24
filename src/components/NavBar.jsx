@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import Register from "./Register";
 
 export default function Navbar() {
 	const nav = useNavigate();
@@ -22,7 +23,12 @@ export default function Navbar() {
 				</li>
 				<li>
 					<button className="link" onClick={() => nav("/Login")}>
-						Login/Register
+						Login
+					</button>
+				</li>
+				<li>
+					<button className="link" onClick={() => nav("/Register")}>
+						Register
 					</button>
 				</li>
 			</ul>

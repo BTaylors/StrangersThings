@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import { useState, React } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -10,13 +10,13 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import SinglePost from "./components/SinglePost";
 import Contact from "./components/Contact";
+import useAuth from "./hooks/useAuth";
 
 function App() {
-	// const [token, setToken] = useState(localStorage.getItem("token"));
+	const { token, user } = useAuth();
 	return (
 		<div className="App">
 			<Navbar />
-			{/* <Register setToken={setToken} /> */}
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/Profile" element={<Profile />} />
