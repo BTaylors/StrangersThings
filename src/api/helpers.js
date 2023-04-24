@@ -16,7 +16,23 @@ export async function registerUser(username, password) {
 			}),
 		});
 		const result = await response.json();
-		console.log();
+		console.log("Result from register user: ", result);
+		return result;
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+export async function fetchMe(token) {
+	try {
+		const response = await fetch(`${BASE_URL}/users/me`, {
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+		});
+		const result = await response.json();
+		console.log("Result in fetchMe: ", result);
 		return result;
 	} catch (error) {
 		console.error(error);
@@ -54,7 +70,12 @@ export const createPost = async () => {
 				Authorization: `Bearer ${token}`,
 			},
 			body: JSON.stringify({
-				post: {},
+				post: {
+					item,
+					price,
+					willDeliver,
+					location,
+				},
 			}),
 		});
 		const result = await response.json();
@@ -81,19 +102,3 @@ export const deleteItem = async (id) => {
 		console.error("Oops, I couldn't delete that item!");
 	}
 };
-
-export async function fetchMe(token) {
-	try {
-		const response = await fetch(`${BASE_URL}/users/me`, {
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${token}`,
-			},
-		});
-		const result = await response.json();
-		console.log("Result in fetchMe: ", result);
-		return result;
-	} catch (error) {
-		console.error(error);
-	}
-}

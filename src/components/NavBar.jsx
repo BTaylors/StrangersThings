@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import Register from "./Register";
+import Register from "./auth/Register";
 
 export default function Navbar() {
 	const nav = useNavigate();

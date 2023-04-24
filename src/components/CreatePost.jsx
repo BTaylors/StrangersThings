@@ -21,11 +21,18 @@ export default function newPost() {
 					<label htmlFor="item">Item:</label>
 					<input type="text" onChange={(e) => setItem(e.target.value)} />
 					<br />
-					<br />
 					<label htmlFor="price">Price:</label>
 					<input type="text" onChange={(e) => setPrice(e.target.value)} />
 					<br />
+					<label htmlFor="item">Location:</label>
+					<input type="text" onChange={(e) => setItem(e.target.value)} />
+					<br />
+					<label htmlFor="item">Will Deliver?</label>
+					<input type="checkbox" onChange={(e) => setItem(e.target.value)} />
+					<br />
+					<br />
 					<button>Submit</button>
+					<br />
 				</div>
 			</form>
 		</div>

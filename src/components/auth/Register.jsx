@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { registerUser } from "../api/helpers";
-import useAuth from "../hooks/useAuth";
+import { registerUser } from "../../api/helpers";
+import useAuth from "../../hooks/useAuth";
+import "../../App.css";
 
 export default function Register() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 
 	const { setToken, user } = useAuth();
+	console.log("User from RegisterForm: ", user);
 
 	async function handleSubmit(e) {
 		e.preventDefault();
@@ -22,19 +24,21 @@ export default function Register() {
 
 	return (
 		<div>
-			<form onSubmit={handleSubmit}>
+			<form id="registerForm" onSubmit={handleSubmit}>
 				<input
 					type="text"
 					name="username"
 					placeholder="username"
 					onChange={(e) => setUsername(e.target.value)}
 				/>
+				<br />
 				<input
 					type="text"
 					name="password"
 					placeholder="password"
 					onChange={(e) => setPassword(e.target.value)}
 				/>
+				<br />
 				<button id="registerSubmit">Submit</button>
 			</form>
 		</div>

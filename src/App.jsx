@@ -7,7 +7,7 @@ import Home from "./components/Home";
 import Profile from "./components/Profile";
 import CreatePost from "./components/CreatePost";
 import Login from "./components/Login";
-import Register from "./components/Register";
+import Register from "./components/auth/Register";
 import SinglePost from "./components/SinglePost";
 import Contact from "./components/Contact";
 import useAuth from "./hooks/useAuth";
