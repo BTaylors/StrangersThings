@@ -16,6 +16,8 @@ const AuthProvider = ({ children }) => {
 		}
 		if (token) {
 			getMe();
+		} else {
+			setUser({});
 		}
 	}, [token]);
 
