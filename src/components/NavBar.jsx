@@ -1,7 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import Register from "./auth/Register";
-
 export default function Navbar() {
 	const nav = useNavigate();
 	return (
@@ -14,7 +12,9 @@ export default function Navbar() {
 					</button>
 				</li>
 				<li>
-					<button className="link">Profile</button>
+					<button className="link" onClick={() => nav("/Profile")}>
+						Profile
+					</button>
 				</li>
 				<li>
 					<button className="link" onClick={() => nav("/CreatePost")}>

@@ -102,3 +102,31 @@ export const deleteItem = async (id) => {
 		console.error("Oops, I couldn't delete that item!");
 	}
 };
+
+export async function GetMyPosts(token) {
+	try {
+		const response = await fetch(`${BASE_URL}/posts/${token}`);
+		const result = await response.json();
+		console.log("result", result);
+		return result.data.post;
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+export default function MyPosts() {
+	const nav = useNavigate();
+	const [posts, setPosts] = useState([]);
+	const willDeliver = true;
+	useEffect(() => {
+		async function getMyPosts() {
+			try {
+				const myPosts = await getPosts();
+				setPosts(myPosts);
+			} catch (error) {
+				console.error("Oops");
+			}
+		}
+		getAllPosts();
+	}, []);
+}
