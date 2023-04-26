@@ -7,7 +7,6 @@ import { useNavigate } from "react-router";
 export default function AllPosts() {
 	const nav = useNavigate();
 	const [posts, setPosts] = useState([]);
-	const willDeliver = true;
 	useEffect(() => {
 		async function getAllPosts() {
 			try {

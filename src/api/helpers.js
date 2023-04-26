@@ -61,7 +61,15 @@ export const fetchSinglePost = async (id) => {
 	}
 };
 
-export const createPost = async () => {
+export const createPost = async (
+	user,
+	title,
+	price,
+	description,
+	location,
+	willDeliver,
+	token
+) => {
 	try {
 		const response = await fetch(`${BASE_URL}/posts`, {
 			method: "POST",
@@ -71,10 +79,12 @@ export const createPost = async () => {
 			},
 			body: JSON.stringify({
 				post: {
-					item,
+					user,
+					title,
 					price,
-					willDeliver,
+					description,
 					location,
+					willDeliver,
 				},
 			}),
 		});
@@ -86,9 +96,9 @@ export const createPost = async () => {
 	}
 };
 
-export const deleteItem = async (id) => {
+export const deletetitle = async (id) => {
 	try {
-		console.log("delete item", id);
+		console.log("delete title", id);
 		const response = await fetch(`${BASE_URL}posts/${id}`, {
 			method: "DELETE",
 			headers: {
@@ -99,7 +109,7 @@ export const deleteItem = async (id) => {
 		console.log(result);
 		return result;
 	} catch (error) {
-		console.error("Oops, I couldn't delete that item!");
+		console.error("Oops, I couldn't delete that title!");
 	}
 };
 
