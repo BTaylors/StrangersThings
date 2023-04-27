@@ -9,6 +9,7 @@ html {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	align-items: center;
 }
 .navbar {
 	display: flex;
@@ -88,12 +89,21 @@ html {
 	box-shadow: 1px 1px 2px 2px;
 }
 
-#registerForm {
+#register {
+	display: flex;
+	justify-content: center;
+	min-height: 87vh;
+}
+.registerForm {
 	display: flex;
 	flex-direction: column;
-	margin: 10px;
-	justify-content: center;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+	padding: 8rem 10rem 8rem 10rem;
+	border: 1px solid;
+	box-shadow: 1px 1px 2px 2px;
 	align-items: center;
+	justify-content: center;
 }
 
 #registerSubmit {
@@ -101,6 +111,13 @@ html {
 	width: fit-content;
 	justify-content: center;
 	align-items: center;
+}
+
+.registerp {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
 }
 
 .profile {
@@ -129,4 +146,65 @@ html {
 	display: flex;
 	align-items: center;
 	padding: 6px;
+}
+
+.allposts {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.one-post {
+	margin: 10px;
+	padding: 2rem;
+	border: 1px solid;
+	box-shadow: 1px 1px 2px 2px;
+}
+.singles-post {
+	min-height: 85vh;
+}
+.single-post-header {
+	margin-top: 1rem;
+	text-align: center;
+	text-decoration: underline;
+}
+.ones-post {
+	margin: 10px;
+	margin-top: 1rem;
+	padding: 2rem;
+	border: 1px solid;
+	box-shadow: 1px 1px 2px 2px;
+}
+.post-title {
+	margin: 4px;
+}
+.post-body {
+	margin: 4px;
+}
+.author {
+	margin: 4px;
+}
+.delivery {
+	margin: 4px;
+	font-weight: 700;
+}
+.post-info {
+	list-style: none;
+	margin: 4px;
+}
+.post-location {
+	margin: 4px;
+}
+.post-price {
+	margin: 4px;
+}
+
+.home-button {
+	margin: 4px;
+	padding: 5px;
+	font-size: medium;
+}
+.deleted-button {
+	margin: 4px;
+	padding: 5px;
+	font-size: medium;
 }

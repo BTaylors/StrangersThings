@@ -1,39 +1,32 @@
+import React from "react";
 import { createContext, useState, useEffect } from "react";
-import { fetchMe } from "../../api/helpers";
+import { getToken } from "../../api/helpers";
 
-// Create the context
 export const AuthContext = createContext();
 
-// Create our Provider (wrapper component)
-const AuthProvider = ({ children }) => {
+export default function AuthProvider({ children }) {
 	const [token, setToken] = useState(localStorage.getItem("token"));
-	const [user, setUser] = useState({
-		posts: [],
-		messages: [],
-	});
-
+	const [user, setUser] = useState("");
+	const [id, setId] = useState("");
 	useEffect(() => {
 		async function getMe() {
-			const APIResponse = await fetchMe(token);
-			setUser(APIResponse.data);
+			const apiResponse = await getToken(token);
+			setUser(apiResponse.data);
+			setId(apiResponse.data._id);
 		}
 		if (token) {
 			getMe();
-		} else {
-			setUser({});
 		}
 	}, [token]);
-
 	const contextValue = {
 		token,
 		setToken,
 		user,
 		setUser,
+		id,
+		setId,
 	};
-
 	return (
 		<AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
 	);
-};
-
-export default AuthProvider;
+}

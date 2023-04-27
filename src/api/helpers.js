@@ -96,20 +96,20 @@ export const createPost = async (
 	}
 };
 
-export const deletetitle = async (id) => {
+export const deletePost = async (token, id) => {
 	try {
-		console.log("delete title", id);
-		const response = await fetch(`${BASE_URL}posts/${id}`, {
+		const response = await fetch(`${BASE_URL}/posts/${id}`, {
 			method: "DELETE",
 			headers: {
-				"Content-type": "application/json",
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
 			},
 		});
 		const result = await response.json();
-		console.log(result);
+		console.log("Result from Delete", result);
 		return result;
 	} catch (error) {
-		console.error("Oops, I couldn't delete that title!");
+		console.error(error);
 	}
 };
 
@@ -137,9 +137,24 @@ export default function MyPosts() {
 				console.error("Oops");
 			}
 		}
-		getAllPosts();
+		getMyPosts();
 	}, []);
 }
+
+export const getToken = async (token) => {
+	try {
+		const response = await fetch(`${BASE_URL}/users/me`, {
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+		});
+		const result = await response.json();
+		return result;
+	} catch (error) {
+		console.error(error);
+	}
+};
 
 export const userLogin = async (username, password) => {
 	try {
@@ -162,3 +177,28 @@ export const userLogin = async (username, password) => {
 		console.error(error);
 	}
 };
+
+// export const postMessage = async () => {
+// 	try {
+// 		const response = await fetch(
+// 			`${BASE_URL}/posts/5e8929ddd439160017553e06/messages`,
+// 			{
+// 				method: "POST",
+// 				headers: {
+// 					"Content-Type": "application/json",
+// 					Authorization: `Bearer ${token}`,
+// 				},
+// 				body: JSON.stringify({
+// 					message: {
+// 						content,
+// 					},
+// 				}),
+// 			}
+// 		);
+// 		const result = await response.json();
+// 		console.log(result);
+// 		return result;
+// 	} catch (err) {
+// 		console.error(err);
+// 	}
+// };

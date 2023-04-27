@@ -24,9 +24,8 @@ export default function Login() {
 		<div className="login">
 			<form onSubmit={handleSubmit}>
 				<div className="login-form">
-					<h2 className="login-header">Login</h2>
+					<p class="registerp">Login</p>
 					<br></br>
-					<label name="username">Username:</label>
 					<input
 						type="text"
 						placeholder="Username"
@@ -35,7 +34,6 @@ export default function Login() {
 					/>
 					<br></br>
 					<br></br>
-					<label password="password">Password:</label>
 					<input
 						type="text"
 						placeholder="Password"
@@ -43,7 +41,9 @@ export default function Login() {
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 					<br></br>
-					<button>Submit</button>
+					<div id="submit">
+						<button id="submit">Submit</button>
+					</div>
 				</div>
 			</form>
 		</div>

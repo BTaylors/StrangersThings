@@ -12,3 +12,8 @@
 	border: 1px solid;
 	box-shadow: 1px 1px 2px 2px;
 }
+
+#submit {
+	display: flex;
+	justify-content: center;
+}

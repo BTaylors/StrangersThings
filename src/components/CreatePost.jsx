@@ -32,19 +32,19 @@ export default function newPost() {
 				}}
 			>
 				<div id="createText">
-					<label htmlFor="item">Item:</label>
+					<label htmlFor="title">Title:</label>
 					<input type="text" onChange={(e) => setTitle(e.target.value)} />
 					<br />
 					<label htmlFor="price">Price:</label>
 					<input type="text" onChange={(e) => setPrice(e.target.value)} />
 					<br />
-					<label htmlFor="price">Description:</label>
+					<label htmlFor="description">Description:</label>
 					<input type="text" onChange={(e) => setDescription(e.target.value)} />
 					<br />
-					<label htmlFor="item">Location:</label>
+					<label htmlFor="location">Location:</label>
 					<input type="text" onChange={(e) => setLocation(e.target.value)} />
 					<br />
-					<label htmlFor="item">Will Deliver?</label>
+					<label htmlFor="willDeliver">Will Deliver?</label>
 					<input
 						type="checkbox"
 						onChange={(e) => setwillDeliver(e.target.value === "on")}

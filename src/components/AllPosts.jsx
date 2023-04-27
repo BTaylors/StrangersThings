@@ -1,12 +1,15 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { getPosts } from "../api/helpers";
-import "../styles/AllPosts.css";
+import "../App.css";
 import { useNavigate } from "react-router";
+import useAuth from "../hooks/useAuth";
 
 export default function AllPosts() {
 	const nav = useNavigate();
 	const [posts, setPosts] = useState([]);
+	const { id, user } = useAuth();
+	const willDeliver = true;
 	useEffect(() => {
 		async function getAllPosts() {
 			try {
@@ -40,10 +43,17 @@ export default function AllPosts() {
 						</ul>
 						<button
 							className="details-button"
-							onClick={() => nav(`/${post._id}`)}
+							onClick={() => {
+								posts.filter((post) => post._id);
+								console.log(post);
+								nav("/id", { state: post });
+							}}
 						>
 							Details
 						</button>
+						{post.author.username === user.username && (
+							<button className="delete-button">Delete</button>
+						)}
 					</div>
 				);
 			})}
