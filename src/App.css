@@ -208,3 +208,84 @@ html {
 	padding: 5px;
 	font-size: medium;
 }
+
+.profile-header {
+	margin: 10px;
+	margin-bottom: 1rem;
+}
+.messages {
+	display: flex;
+	margin: 10px;
+	padding: 2rem;
+	border: 1px solid;
+	box-shadow: 1px 1px 2px 2px;
+}
+.yourPosts {
+	display: flex;
+	flex-direction: column;
+	margin: 10px;
+	padding: 2rem;
+	border: 1px solid;
+	box-shadow: 1px 1px 2px 2px;
+}
+.no-messages {
+	display: flex;
+	align-items: center;
+	padding: 6px;
+}
+.no-posts {
+	display: flex;
+	align-items: center;
+	padding: 6px;
+}
+.profile-one-post {
+	margin: 10px;
+	padding: 2rem;
+	border: 1px solid;
+	box-shadow: 1px 1px 2px 2px;
+	min-width: 80vw;
+}
+.delete-button {
+	margin: 4px;
+	padding: 5px;
+	font-size: medium;
+}
+
+.allposts {
+	display: flex;
+	flex-direction: column;
+}
+.one-post {
+	margin: 10px;
+	padding: 2rem;
+	border: 1px solid;
+	box-shadow: 1px 1px 2px 2px;
+}
+.post-title {
+	margin: 4px;
+}
+.post-body {
+	margin: 4px;
+}
+.author {
+	margin: 4px;
+}
+.delivery {
+	margin: 4px;
+	font-weight: 700;
+}
+.post-info {
+	list-style: none;
+	margin: 4px;
+}
+
+.details-button {
+	margin: 4px;
+	padding: 5px;
+	font-size: medium;
+}
+
+#welcome {
+	padding: 10px;
+	margin-left: 10px;
+}

@@ -24,7 +24,7 @@ export default function Login() {
 		<div className="login">
 			<form onSubmit={handleSubmit}>
 				<div className="login-form">
-					<p class="registerp">Login</p>
+					<p className="registerp">Login</p>
 					<br></br>
 					<input
 						type="text"

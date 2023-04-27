@@ -45,7 +45,6 @@ export default function AllPosts() {
 							className="details-button"
 							onClick={() => {
 								posts.filter((post) => post._id);
-								console.log(post);
 								nav("/id", { state: post });
 							}}
 						>

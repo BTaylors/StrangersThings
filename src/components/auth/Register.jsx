@@ -25,8 +25,8 @@ export default function Register() {
 	return (
 		<div id="register">
 			<form id="registerForm" onSubmit={handleSubmit}>
-				<div class="registerForm">
-					<p class="registerp">Register an account!</p>
+				<div className="registerForm">
+					<p className="registerp">Register an account!</p>
 					<br />
 					<input
 						type="text"
