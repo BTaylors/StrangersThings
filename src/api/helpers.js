@@ -124,23 +124,6 @@ export async function GetMyPosts(token) {
 	}
 }
 
-export default function MyPosts() {
-	const nav = useNavigate();
-	const [posts, setPosts] = useState([]);
-	const willDeliver = true;
-	useEffect(() => {
-		async function getMyPosts() {
-			try {
-				const myPosts = await getPosts();
-				setPosts(myPosts);
-			} catch (error) {
-				console.error("Oops");
-			}
-		}
-		getMyPosts();
-	}, []);
-}
-
 export const getToken = async (token) => {
 	try {
 		const response = await fetch(`${BASE_URL}/users/me`, {
@@ -165,8 +148,8 @@ export const userLogin = async (username, password) => {
 			},
 			body: JSON.stringify({
 				user: {
-					username: username,
-					password: password,
+					username,
+					password,
 				},
 			}),
 		});
@@ -177,24 +160,40 @@ export const userLogin = async (username, password) => {
 		console.error(error);
 	}
 };
-
+export const userLogout = async (token) => {
+	try {
+		const response = await fetch(`${BASE_URL}/Login`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				user: {
+					token,
+				},
+			}),
+		});
+		const result = await response.json();
+		console.log(result);
+		return result;
+	} catch (err) {
+		console.error(err);
+	}
+};
 // export const postMessage = async () => {
 // 	try {
-// 		const response = await fetch(
-// 			`${BASE_URL}/posts/5e8929ddd439160017553e06/messages`,
-// 			{
-// 				method: "POST",
-// 				headers: {
-// 					"Content-Type": "application/json",
-// 					Authorization: `Bearer ${token}`,
+// 		const response = await fetch(`${BASE_URL}/posts/${id}/messages`, {
+// 			method: "POST",
+// 			headers: {
+// 				"Content-Type": "application/json",
+// 				Authorization: `Bearer ${token}`,
+// 			},
+// 			body: JSON.stringify({
+// 				message: {
+// 					content: "",
 // 				},
-// 				body: JSON.stringify({
-// 					message: {
-// 						content,
-// 					},
-// 				}),
-// 			}
-// 		);
+// 			}),
+// 		});
 // 		const result = await response.json();
 // 		console.log(result);
 // 		return result;

@@ -23,8 +23,14 @@ export default function Profile() {
 			<h2 className="profile-header">Welcome {user.username}!</h2>
 			<div className="messages">
 				<h2>Your Messages: </h2>
-				{messages.length === 0 && (
+				{messages.length === 0 ? (
 					<p className="no-messages">You have no new messages</p>
+				) : (
+					<div>
+						{messages.map((message) => {
+							return <p key={user}>{message.content}</p>;
+						})}
+					</div>
 				)}
 				<br />
 			</div>
@@ -42,7 +48,7 @@ export default function Profile() {
 									<li>
 										<p className="post-body">{post.description}</p>
 									</li>
-									<li>
+									<li key={user.id}>
 										<p className="author">User: {user.username}</p>
 										{post.willDeliver ? (
 											<p className="delivery">Will Deliver!</p>
@@ -64,7 +70,7 @@ export default function Profile() {
 								<button
 									className="delete-button"
 									onClick={async (e) => {
-										await deletePost(token, post._id);
+										await Logout(token, post._id);
 										setPosts(posts);
 										console.log(posts);
 									}}

@@ -1,7 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router";
+import { userLogout } from "../api/helpers";
+import useAuth from "../hooks/useAuth";
 export default function Navbar() {
 	const nav = useNavigate();
+	const { token, setToken, user, setUser } = useAuth();
 	return (
 		<div className="navbar">
 			<h1>Strangers Thing's</h1>
@@ -11,11 +15,13 @@ export default function Navbar() {
 						Home
 					</button>
 				</li>
-				<li>
-					<button className="link" onClick={() => nav("/Profile")}>
-						Profile
-					</button>
-				</li>
+				{token && (
+					<li>
+						<button className="link" onClick={() => nav("/Profile")}>
+							Profile
+						</button>
+					</li>
+				)}
 				<li>
 					<button className="link" onClick={() => nav("/CreatePost")}>
 						Create Listing
@@ -29,6 +35,21 @@ export default function Navbar() {
 				<li>
 					<button className="link" onClick={() => nav("/Register")}>
 						Register
+					</button>
+				</li>
+				<li>
+					<button
+						className="link"
+						onClick={async () => (
+							await userLogout(token, user),
+							setUser(""),
+							setToken(null),
+							localStorage.clear,
+							nav("/Login"),
+							console.log(user)
+						)}
+					>
+						Log Out
 					</button>
 				</li>
 			</ul>

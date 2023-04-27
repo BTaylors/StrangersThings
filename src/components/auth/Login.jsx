@@ -6,7 +6,7 @@ import "../../styles/Login.css";
 export default function Login() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
-	const { setToken, user } = useAuth();
+	const { token, setToken, user } = useAuth();
 
 	async function handleSubmit(e) {
 		e.preventDefault();
