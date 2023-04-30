@@ -180,24 +180,59 @@ export const userLogout = async (token) => {
 		console.error(err);
 	}
 };
-// export const postMessage = async () => {
-// 	try {
-// 		const response = await fetch(`${BASE_URL}/posts/${id}/messages`, {
-// 			method: "POST",
-// 			headers: {
-// 				"Content-Type": "application/json",
-// 				Authorization: `Bearer ${token}`,
-// 			},
-// 			body: JSON.stringify({
-// 				message: {
-// 					content: "",
-// 				},
-// 			}),
-// 		});
-// 		const result = await response.json();
-// 		console.log(result);
-// 		return result;
-// 	} catch (err) {
-// 		console.error(err);
-// 	}
-// };
+export const postMessage = async (token, id, content) => {
+	try {
+		const response = await fetch(`${baseUrl}/posts/${id}/messages`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+			body: JSON.stringify({
+				message: {
+					content: content,
+				},
+			}),
+		});
+		const result = await response.json();
+		console.log(result);
+		return result;
+	} catch (error) {
+		console.error(error);
+	}
+};
+export const editPost = async (
+	token,
+	id,
+	title,
+	description,
+	price,
+	location,
+	willDeliver
+) => {
+	try {
+		const response = await fetch(`${baseUrl}/posts/${id}`, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+			body: JSON.stringify({
+				post: {
+					title,
+					description,
+					price,
+					location,
+					willDeliver,
+					token,
+					id,
+				},
+			}),
+		});
+		const result = await response.json();
+		console.log("edit from helpers", result);
+		return result;
+	} catch (error) {
+		console.error(error);
+	}
+};
