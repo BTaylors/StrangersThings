@@ -13,6 +13,7 @@ import Contact from "./components/Contact";
 import Message from "./components/Message";
 import Edit from "./components/Edit";
 import Reply from "./components/Reply";
+import SearchBar from "./components/SearchBar";
 import useAuth from "./hooks/useAuth";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 	return (
 		<div className="App">
 			<Navbar />
+			<SearchBar />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/Profile" element={<Profile />} />
